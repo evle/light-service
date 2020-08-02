@@ -1,0 +1,22 @@
+{% extends "layout.njk" %}
+{% block content %}
+  <h1>Welcome
+    {{username}}</h1>
+
+  <h2>
+    {% if list.length > 0 %}
+      userlist below:
+    {% else %}
+      you have no staff
+    {% endif %}
+  </h2>
+
+  {% include "hr.njk" %}
+
+  <ul>
+    {% for user in list %}
+      <li>{{user.name | capitalize }}</li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}

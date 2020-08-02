@@ -1,0 +1,14 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  {{super()}}
+  <form action="/login" method="POST">
+    <label>username
+    </label>
+    <input name="username"/>
+    <label>password</label>
+    <input name="password"/>
+    <button>login</button>
+  </form>
+
+{% endblock %}
