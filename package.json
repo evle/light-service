@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev":"egg-bin dev",
+    "dev": "egg-bin dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,7 +12,11 @@
   "license": "ISC",
   "dependencies": {
     "egg": "^2.27.0",
+    "egg-view-nunjucks": "^2.2.0",
     "express": "^4.17.1",
     "nunjucks": "^3.2.2"
+  },
+  "devDependencies": {
+    "mockjs": "^1.1.0"
   }
 }

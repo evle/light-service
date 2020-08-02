@@ -2,7 +2,13 @@ const { Controller } = require('egg')
 
 class NewsController extends Controller {
   async index() {
-    this.ctx.body = 'hello'
+    const { ctx } = this
+
+    let limit = ctx.query && ctx.query.limit || 10;
+    console.log('limit: ', limit)
+    let list = await ctx.service.news.list(limit)
+    // console.log('list: ', list)
+    await ctx.render('news', { list: list.data })
   }
 }
 

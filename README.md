@@ -15,3 +15,18 @@ Model
 2. 增删改查
 
 V view
+
+
+
+app/router.js  entry
+app/public   static middleware
+app/controller
+config/config.default.js
+
+插件模式
+plugin
+config/plugins.js
+exports.nunjucks = {
+  enable: true,
+  package: 'egg-view-nunjucks'
+}
