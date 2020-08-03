@@ -1,3 +1,17 @@
+Egg from zero to Hero
+=====================
+
+Hope you can learn something useful from this project!
+
+1. MVC 
+2. Template Engine
+3. Egg as backend service
+4. Egg as BFF 
+
+
+
+
+
 MVC 
 
 controller -> Service
@@ -30,3 +44,41 @@ exports.nunjucks = {
   enable: true,
   package: 'egg-view-nunjucks'
 }
+
+egg.js 作为服务
+
+egg.js 作为中间层
+转发 
+
+
+egg.js node单进程
+4核 默认使用1核
+
+为了充分利用CPU资源, 使用node集群
+
+
+
+定时任务
+周期性从服务端拉取数据
+
+subscrib
+
+static get schedule(){
+  return {
+    interval: '1m',
+    type: 'all'
+  }
+
+  async subscribe(){
+    let reuslt = await this.ctx.curl(url, {dataTYpe: 'json'})
+    this.ctx.app.cache = result.data
+  }
+}
+手动运行任务， 服务器启动前运行一次 
+app.runSchedule(schedulePath)
+
+app.js
+module.exports = app =>{
+app.beforeStart(async ()=>{
+  await app.runSchedual('updateSche')
+})}

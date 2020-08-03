@@ -1,6 +1,13 @@
 let app = require('express')()
 let Mock = require('mockjs')
 
+
+app.get('/title', (req, res) => {
+  res.json({
+    title: 'title' + new Date()
+  })
+})
+
 app.get('/news', (req, res) => {
   let data = Mock.mock({
     "code": 0,
